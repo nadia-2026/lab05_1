@@ -2,16 +2,17 @@
 
 try
 {
-    Student student1 = new Student("Иван Иванов", "ИС-21", 8.7);
-    student1.PrintInfo();
-    Console.WriteLine(); 
+    Box box = new Box(10, 5, 4);
 
-    Student student2 = new Student("Анна Петрова", "ИС-21", 6.5);
-    student2.PrintInfo();
-    Console.WriteLine();
+    box.PrintBox();
 
-    Console.WriteLine("Попытка создать студента с баллом 11:");
-    Student student3 = new Student("Ошибка", "Тест", 11);
+    Console.WriteLine($"\nПоместится ли объем 100? {box.IsFit(100)}"); 
+    Console.WriteLine($"Поместится ли объем 250? {box.IsFit(250)}"); 
+    Console.WriteLine("\n--- Меняем высоту на 2 ---");
+    box.H = 2;
+    box.PrintBox();
+    Console.WriteLine("\n--- Попытка установить длину -5 ---");
+    box.L = -5;
 }
 catch (ArgumentException ex)
 {
